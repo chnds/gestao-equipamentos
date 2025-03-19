@@ -1,0 +1,31 @@
+ Requisitos Funcionais (O que o sistema deve fazer?)
+Cadastro de Clientes
+
+Nome
+Contato (e-mail, telefone)
+Endereço (opcional)
+Cadastro de Equipamentos
+
+Tipo do equipamento (Câmera, lente, flash, etc.)
+Marca e modelo
+Número de série (opcional)
+Ordem de Serviço (OS) para Manutenção
+
+Cliente vinculado à OS
+Equipamento vinculado à OS
+Descrição do problema
+Previsão de entrega
+Valor estimado da manutenção
+Registro de Custos Adicionais
+
+Peças compradas de terceiros
+Valor gasto em peças e serviços externos
+Total de gastos na manutenção
+Status da Manutenção
+
+Acompanhamento do progresso (Em análise, Em manutenção, Concluído)
+Comentários adicionais para atualização do cliente
+Página para o Cliente Acompanhar o Serviço
+
+Cliente pode visualizar o status da manutenção
+Histórico de atualizações e comentários
