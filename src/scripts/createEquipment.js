@@ -1,15 +1,18 @@
-// createEquipment.js
-const { PrismaClient } = require('@prisma/client');  // Importa o Prisma Client
+// Importa o Prisma Client
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();  // Cria uma instância do Prisma Client
 
 async function createEquipment() {
+  // Cria um novo equipamento no banco de dados
   const newEquipment = await prisma.equipment.create({
     data: {
-      name: 'Camera',
-      description: 'A high-end DSLR camera',
+      name: 'Camera',  // Nome do equipamento
+      description: 'A high-end DSLR camera',  // Descrição do equipamento
     },
   });
-  console.log(newEquipment);  // Exibe o equipamento criado
+
+  console.log('Novo equipamento cadastrado:', newEquipment);  // Exibe o equipamento criado
+  await prisma.$disconnect();  // Fecha a conexão com o banco de dados
 }
 
 createEquipment();  // Chama a função para criar um novo equipamento

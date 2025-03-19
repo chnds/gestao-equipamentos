@@ -9,7 +9,7 @@
     - Front: React
 - [x] Configurar repositório Git e criar estrutura de pastasn
 - [x] Configurar variáveis de ambiente (`.env`)
-- [ ]  Finalizar configuração e testes com o prisma 
+- [x]  Finalizar configuração e testes com o prisma 
 - [ ] Definir padrões de código (ESLint, Prettier, Husky, Commitlint)
 
 ## 📂 2. Organização do Código
