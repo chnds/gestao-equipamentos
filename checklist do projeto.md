@@ -7,8 +7,9 @@
     - Back-end: Node.js + Express + TypeScript
     - Banco de dados: PostgreSQL + Prisma ORM
     - Front: React
-- [x] Configurar repositório Git e criar estrutura de pastas
-- [ ] Configurar variáveis de ambiente (`.env`)
+- [x] Configurar repositório Git e criar estrutura de pastasn
+- [x] Configurar variáveis de ambiente (`.env`)
+- [ ]  Finalizar configuração e testes com o prisma 
 - [ ] Definir padrões de código (ESLint, Prettier, Husky, Commitlint)
 
 ## 📂 2. Organização do Código
@@ -25,7 +26,7 @@
 - [ ] Validar inputs do usuário (Joi, Zod, Yup)
 - [ ] Sanitizar dados de entrada
 
-## 📊 4. Banco de Dados
+## 📊 4. Banco de Dadosnp
 - [ ] Escolher banco de dados (PostgreSQL, MySQL, MongoDB, etc.)
 - [ ] Configurar ORM (Prisma, TypeORM, Sequelize, Mongoose)
 - [ ] Criar migrations e seeders
