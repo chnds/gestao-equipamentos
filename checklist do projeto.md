@@ -10,11 +10,12 @@
 - [x] Configurar repositório Git e criar estrutura de pastasn
 - [x] Configurar variáveis de ambiente (`.env`)
 - [x]  Finalizar configuração e testes com o prisma 
-- [ ] Definir padrões de código (ESLint, Prettier, Husky, Commitlint)
+- [x] Definir padrões de código (ESLint, Prettier, Husky, Commitlint)
 
 ## 📂 2. Organização do Código
-- [ ] Estruturar pastas e módulos
-- [ ] Definir arquitetura do projeto (MVC, Clean Architecture, Hexagonal, etc.)
+- [x] Estruturar pastas e módulos
+- [x] Definir arquitetura do projeto (MVC, Clean Architecture, Hexagonal, etc.)
+    - MVC
 - [ ] Criar camadas (Controllers, Services, Repositories, etc.)
 - [ ] Configurar rotas e middlewares
 - [ ] Implementar Inversão de Dependência (Dependency Injection)
@@ -59,5 +60,3 @@
 - [ ] Adicionar diagramas de arquitetura
 - [ ] Documentar decisões técnicas
 
----
-✅ **Checklist atualizado para um projeto robusto e escalável!**
