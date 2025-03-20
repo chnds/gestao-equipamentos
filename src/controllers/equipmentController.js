@@ -1,74 +1,64 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+// controllers/EquipmentController.js
 
-const createEquipment = async (req, res) => {
-  try {
-    const { name, description } = req.body;
-    const equipment = await prisma.equipment.create({
-      data: { name, description },
-    });
-    res.status(201).json(equipment);
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao criar equipamento' });
+const EquipmentService = require('../services/EquipmentService');
+
+class EquipmentController {
+  constructor() {
+    this.equipmentService = new EquipmentService();
   }
-};
 
-const getAllEquipment = async (req, res) => {
-  try {
-    const equipment = await prisma.equipment.findMany();
-    res.json(equipment);
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao buscar equipamentos' });
+  async createEquipment(req, res) {
+    try {
+      const { name, description } = req.body;
+      const equipment = await this.equipmentService.create(name, description);
+      res.status(201).json(equipment);
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao criar equipamento' });
+    }
   }
-};
 
-const getEquipmentById = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const equipment = await prisma.equipment.findUnique({
-      where: { id: parseInt(id) },
-    });
-    if (!equipment) return res.status(404).json({ error: 'Equipamento não encontrado' });
-    res.json(equipment);
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao buscar equipamento' });
+  async getAllEquipment(req, res) {
+    try {
+      const equipment = await this.equipmentService.getAll();
+      res.json(equipment);
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao buscar equipamentos' });
+    }
   }
-};
 
-const updateEquipment = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { name, description } = req.body;
-
-    const equipment = await prisma.equipment.update({
-      where: { id: parseInt(id) },
-      data: { name, description },
-    });
-
-    res.json(equipment);
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao atualizar equipamento' });
+  async getEquipmentById(req, res) {
+    try {
+      const { id } = req.params;
+      const equipment = await this.equipmentService.getById(id);
+      if (!equipment) {
+        return res.status(404).json({ error: 'Equipamento não encontrado' });
+      }
+      res.json(equipment);
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao buscar equipamento' });
+    }
   }
-};
 
-const deleteEquipment = async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    await prisma.equipment.delete({
-      where: { id: parseInt(id) },
-    });
-
-    res.json({ message: 'Equipamento deletado com sucesso' });
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao deletar equipamento' });
+  async updateEquipment(req, res) {
+    try {
+      const { id } = req.params;
+      const { name, description } = req.body;
+      const equipment = await this.equipmentService.update(id, name, description);
+      res.json(equipment);
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao atualizar equipamento' });
+    }
   }
-};
 
-module.exports = {
-  createEquipment,
-  getAllEquipment,
-  getEquipmentById,
-  updateEquipment,
-  deleteEquipment,
-};
+  async deleteEquipment(req, res) {
+    try {
+      const { id } = req.params;
+      await this.equipmentService.delete(id);
+      res.json({ message: 'Equipamento deletado com sucesso' });
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao deletar equipamento' });
+    }
+  }
+}
+
+module.exports = EquipmentController;

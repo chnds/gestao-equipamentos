@@ -16,9 +16,9 @@
 - [x] Estruturar pastas e módulos
 - [x] Definir arquitetura do projeto (MVC, Clean Architecture, Hexagonal, etc.)
     - MVC
-- [ ] Criar camadas (Controllers, Services, Repositories, etc.)
-- [ ] Configurar rotas e middlewares
-- [ ] Implementar Inversão de Dependência (Dependency Injection)
+- [x] Criar camadas (Controllers, Services, Repositories, etc.)
+- [x] Configurar rotas e middlewares
+- [x] Implementar Inversão de Dependência (Dependency Injection)
 
 ## 🔐 3. Segurança
 - [ ] Implementar autenticação (JWT, OAuth, Keycloak, etc.)

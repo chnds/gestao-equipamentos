@@ -1,21 +1,20 @@
+// server.js
+
 const express = require('express');
 const cors = require('cors');
-const equipmentRoutes = require('./routes/equipmentRoutes'); // Caminho correto para as rotas
+const equipmentRoutes = require('./routes/equipmentRoutes');
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+// Middlewares
+app.use(express.json()); // Permite receber JSON no corpo da requisição
+app.use(cors()); // Habilita CORS para requisições externas
 
-// Defina uma rota raiz para garantir que o servidor está funcionando
-app.get('/', (req, res) => {
-  res.send('Servidor está funcionando!');
-});
+// Usar as rotas de equipamentos
+app.use('/api', equipmentRoutes);
 
-// Usando as rotas do equipamento
-app.use('/equipment', equipmentRoutes);
-
-const PORT = 3000;
+// Configuração do servidor
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
