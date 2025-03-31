@@ -28,8 +28,8 @@
 - [ ] Sanitizar dados de entrada
 
 ## 📊 4. Banco de Dadosnp
-- [ ] Escolher banco de dados (PostgreSQL, MySQL, MongoDB, etc.)
-- [ ] Configurar ORM (Prisma, TypeORM, Sequelize, Mongoose)
+- [X] Escolher banco de dados (PostgreSQL, MySQL, MongoDB, etc.)
+- [X] Configurar ORM (Prisma, TypeORM, Sequelize, Mongoose)
 - [ ] Criar migrations e seeders
 - [ ] Implementar conexão e pool de conexões
 - [ ] Definir estratégia de cache (Redis, Memcached)

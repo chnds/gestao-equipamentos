@@ -1,16 +1,16 @@
-// routes/equipmentRoutes.js
-
-const express = require('express');
-const EquipmentController = require('../controllers/equipmentController');
+const express = require("express");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const router = express.Router();
-const equipmentController = new EquipmentController();
 
-// Rotas de equipamentos
-router.post('/equipment', equipmentController.createEquipment.bind(equipmentController));
-router.get('/equipment', equipmentController.getAllEquipment.bind(equipmentController));
-router.get('/equipment/:id', equipmentController.getEquipmentById.bind(equipmentController));
-router.put('/equipment/:id', equipmentController.updateEquipment.bind(equipmentController));
-router.delete('/equipment/:id', equipmentController.deleteEquipment.bind(equipmentController));
+let equipments = [
+  { id: 1, name: "Máquina 1", status: "Operacional" },
+  { id: 2, name: "Máquina 2", status: "Em Manutenção" },
+];
+
+// Lista de equipamentos (protegida)
+router.get("/equipments", authMiddleware, (req, res) => {
+  res.json(equipments);
+});
 
 module.exports = router;
