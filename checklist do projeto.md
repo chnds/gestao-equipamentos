@@ -21,15 +21,15 @@
 - [x] Implementar Inversão de Dependência (Dependency Injection)
 
 ## 🔐 3. Segurança
-- [ ] Implementar autenticação (JWT, OAuth, Keycloak, etc.)
-- [ ] Proteger rotas e permissões (RBAC, ABAC)
-- [ ] Configurar Helmet e CORS para segurança
+- [X] Implementar autenticação (JWT, OAuth, Keycloak, etc.)
+- [X] Proteger rotas e permissões (RBAC, ABAC)
+- [X] Configurar Helmet e CORS para segurança
 - [ ] Validar inputs do usuário (Joi, Zod, Yup)
 - [ ] Sanitizar dados de entrada
 
 ## 📊 4. Banco de Dadosnp
-- [X] Escolher banco de dados (PostgreSQL, MySQL, MongoDB, etc.)
-- [X] Configurar ORM (Prisma, TypeORM, Sequelize, Mongoose)
+- [ ] Escolher banco de dados (PostgreSQL, MySQL, MongoDB, etc.)
+- [ ] Configurar ORM (Prisma, TypeORM, Sequelize, Mongoose)
 - [ ] Criar migrations e seeders
 - [ ] Implementar conexão e pool de conexões
 - [ ] Definir estratégia de cache (Redis, Memcached)

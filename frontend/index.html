@@ -1,13 +1,19 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+import React, { useState } from 'react';
+
+//Componente funcional que representa  formulário de contato
+
+export default function ContactForm(){
+  //useState cria um estado para armazenar os dados do formulário
+  const [formData, setFormData] = useState({
+    email: '',
+    telefone: ''
+  })
+}
+
+//Estado para armazenar mensagens de erro de validação
+
+const [errors, setErrors] = useState<{email ?: string; telefone?:string}>({});
+
+//Essa função será chamada sempre que o usuario digitar algo no campos
+
+const handleChange
