@@ -2,5 +2,8 @@
   "dependencies": {
     "joi": "^17.13.3",
     "mssql": "^11.0.1"
+  },
+  "scripts": {
+    "test": "echo \"No tests available\" && exit 0"
   }
 }
