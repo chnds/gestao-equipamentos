@@ -3,7 +3,6 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const router = express.Router();
-const validarRegistro = require('./middlewares/user');
 
 // Configurações
 const SECRET_KEY = process.env.JWT_SECRET;
@@ -26,7 +25,7 @@ let users = [
  * 🔹 Rota de Registro
  * Registra um novo usuário no sistema
  */
-router.post("/register",validarRegistro, async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
