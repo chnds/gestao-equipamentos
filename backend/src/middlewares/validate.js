@@ -1,15 +1,18 @@
-const joi = require('joi');
+// backend/src/middlewares/validate.js
+const Joi = require('joi');
 
-function validate(schema, property = 'body') {
-    return (req,res,next) => {
-        const {error} = schema.validate(req[property]);
-
-        if(error) {
-            return res.status(400).json({message: error.details[0].message});
-        }
-
-        next();
+function validate(schema) {
+  return (req, res, next) => {
+    const { error } = schema.validate(req.body, { abortEarly: false });
+    if (error) {
+      const errors = error.details.map(detail => ({
+        field: detail.context.key,
+        message: detail.message.replace(/"/g, '')
+      }));
+      return res.status(400).json({ errors });
     }
-
-    module.exports = validate;
+    next();
+  };
 }
+
+module.exports = validate;
