@@ -24,14 +24,16 @@
 - [X] Implementar autenticação (JWT, OAuth, Keycloak, etc.)
 - [X] Proteger rotas e permissões (RBAC, ABAC)
 - [X] Configurar Helmet e CORS para segurança
-- [ ] Validar inputs do usuário (Joi, Zod, Yup)
-- [ ] Sanitizar dados de entrada
+- [X] Validar inputs do usuário (Joi, Zod, Yup)
+- [X] Sanitizar dados de entrada
 
 ## 📊 4. Banco de Dadosnp
-- [ ] Escolher banco de dados (PostgreSQL, MySQL, MongoDB, etc.)
-- [ ] Configurar ORM (Prisma, TypeORM, Sequelize, Mongoose)
-- [ ] Criar migrations e seeders
-- [ ] Implementar conexão e pool de conexões
+- [x] Escolher banco de dados (PostgreSQL, MySQL, MongoDB, etc.) 
+    Utilizado: MongoDB
+- [x] Configurar ORM (Prisma, TypeORM, Sequelize, Mongoose)
+    Utilizado: Mongoose
+- [x] Criar migrations e seeders
+- [x] Implementar conexão e pool de conexões
 - [ ] Definir estratégia de cache (Redis, Memcached)
 
 ## 🧪 5. Testes Automatizados

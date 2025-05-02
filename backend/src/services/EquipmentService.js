@@ -1,38 +1,41 @@
 // services/EquipmentService.js
 
 const IEquipmentService = require('../interfaces/IEquipmentService');
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const EquipmentModel = require('../models/Lens'); // Importe seu Model do Mongoose
+const cache = require('../config/cache'); // Importe a instância do Memcached
 
 class EquipmentService extends IEquipmentService {
-  async create(name, description) {
-    return await prisma.equipment.create({
-      data: { name, description },
+  async getAllLenses() {
+    const cacheKey = 'equipments:all';
+  
+    const cachedData = await new Promise((resolve, reject) => {
+      cache.get(cacheKey, (err, data) => {
+        if (err) {
+          console.error('Erro ao obter dados do cache:', err);
+          return resolve(null); // em caso de erro, ignora cache e continua
+        }
+        resolve(data);
+      });
     });
-  }
-
-  async getAll() {
-    return await prisma.equipment.findMany();
-  }
-
-  async getById(id) {
-    return await prisma.equipment.findUnique({
-      where: { id },
+  
+    if (cachedData) {
+      console.log('Dados de equipamentos obtidos do cache.');
+      return JSON.parse(cachedData);
+    }
+  
+    // Se não tiver no cache, busca no banco
+    const equipments = await EquipmentModel.find();
+  
+    // Salva no cache para próximas requisições
+    cache.set(cacheKey, JSON.stringify(equipments), 3600, (err) => {
+      if (err) {
+        console.error('Erro ao salvar dados no cache:', err);
+      }
     });
+  
+    return equipments;
   }
-
-  async update(id, name, description) {
-    return await prisma.equipment.update({
-      where: { id },
-      data: { name, description },
-    });
-  }
-
-  async delete(id) {
-    await prisma.equipment.delete({
-      where: { id },
-    });
-  }
+  
 }
 
 module.exports = EquipmentService;

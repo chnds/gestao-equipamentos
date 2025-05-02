@@ -59,3 +59,8 @@
 - [ ] Criar README detalhado
 - [ ] Adicionar diagramas de arquitetura
 - [ ] Documentar decisões técnicas
+
+
+Comandos:
+
+node backend/src/seed.js
