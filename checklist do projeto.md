@@ -35,19 +35,21 @@
 - [x] Criar migrations e seeders
 - [x] Implementar conexão e pool de conexões
 - [ ] Definir estratégia de cache (Redis, Memcached)
+    - Em andamento
 
 ## 🧪 5. Testes Automatizados
-- [ ] Escolher framework de testes (Jest, Mocha, Chai)
+- [X] Escolher framework de testes (Jest, Mocha, Chai)
+    - Jest
 - [ ] Criar testes unitários
 - [ ] Criar testes de integração
 - [ ] Testar API com Postman, Insomnia ou Newman
 - [ ] Configurar cobertura de testes (nyc, coverage reports)
 
 ## 🔄 6. CI/CD (Integração e Deploy Contínuo)
-- [ ] Configurar pipeline CI/CD (GitHub Actions, GitLab CI, Jenkins)
+- [x] Configurar pipeline CI/CD (GitHub Actions, GitLab CI, Jenkins)
 - [ ] Implementar testes automatizados na pipeline
 - [ ] Criar ambiente de staging
-- [ ] Automatizar deploy (Docker, Kubernetes, Vercel, AWS, Railway)
+- [x] Automatizar deploy (Docker, Kubernetes, Vercel, AWS, Railway)
 - [ ] Configurar monitoramento e logging (Winston, Datadog, Prometheus)
 
 ## 🏎️ 7. Performance e Escalabilidade

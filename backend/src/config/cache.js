@@ -1,15 +1,17 @@
 const Memcached = require('memcached');
+const { promisify } = require('util');
 
-const memcachedAddress = process.env.MEMCACHED_URL || 'http://localhost:11211';
+const memcached = new Memcached('localhost:11211');
+memcached.get = promisify(memcached.get);
 
-const cache = new Memcached(memcachedAddress, {
-  retries: 5,
-  retry: 5000,
-  maxExpiration: 2592000, // Tempo máximo de expiração em segundos (30 dias)
-});
+async function getFromCache(key) {
+  try {
+    return await memcached.get(key);
+  } catch (err) {
+    console.error('Cache error:', err);
+    return null;
+  }
+}
 
-cache.on('error', (err) => {
-  console.error('Erro na conexão com o Memcached:', err);
-});
-
-module.exports = cache;
+// Uso:
+getFromCache('minha_chave').then(console.log);
