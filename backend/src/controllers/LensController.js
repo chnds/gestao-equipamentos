@@ -1,6 +1,5 @@
 const EquipmentService = require('../services/EquipmentService');
 const Lens = require('../models/Lens');
-const cache = require('../config/cache');
 
 const equipmentService = new EquipmentService();
 

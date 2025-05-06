@@ -5,13 +5,13 @@ const lensRoutes = require('./src/routes/lensRoutes');
 const app = express();
 const PORT = 3600;
 
-// Middleware
+// Middleware padrão
 app.use(express.json());
 
-// Database
+// Conexão com banco de dados
 connectDB();
 
-// Rotas
+// Rotas com cache aplicado
 app.use('/api/lenses', lensRoutes);
 
 app.listen(PORT, () => {
