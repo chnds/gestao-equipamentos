@@ -40,8 +40,9 @@
 ## 🧪 5. Testes Automatizados
 - [X] Escolher framework de testes (Jest, Mocha, Chai)
     - Jest
-- [ ] Criar testes unitários
+- [X] Criar testes unitários
 - [ ] Criar testes de integração
+    - Em andamento
 - [ ] Testar API com Postman, Insomnia ou Newman
 - [ ] Configurar cobertura de testes (nyc, coverage reports)
 
